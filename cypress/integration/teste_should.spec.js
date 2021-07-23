@@ -23,5 +23,12 @@ context('Validar menus', () => {
 
     //SHOULD
     cy.get('.page-title').should('contain', 'Produtos')
+    cy.url().should('contain', '/shop')
+  })
+
+  it('clicando no link conta deve direcionar para a pagina de login/cadastro', () => {
+    cy.visit('http://lojaebac.ebaconline.art.br')
+    cy.get('.icon-user-unfollow').click()
+    cy.url().should('contain', '/my-account-2')
   })
 })
